@@ -1,3 +1,4 @@
+#code
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +15,6 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><button id="toggle-mode">Switch to Dark Mode</button></li>
             </ul>
         </nav>
     </header>
@@ -28,41 +28,13 @@
         <section id="gallery">
             <h2>Gallery</h2>
             <div class="artwork">
-                <img src="./artwork1.jpg" alt="Artwork 1" width="500" height="600" onclick="openModal(this)">
-                <img src="./artwork2.jpg" alt="Artwork 2" width="500" height="600" onclick="openModal(this)">
-                <img src="./artwork3.jpg" alt="Artwork 3" width="500" height="600" onclick="openModal(this)">
-                <img src="./artwork4.jpg" alt="Artwork 4" width="500" height="600" onclick="openModal(this)">
-                <img src="./artwork5.jpg" alt="Artwork 5" width="500" height="600" onclick="openModal(this)">
+                <img src="./artwork1.jpg" alt="Artwork 1" width="500" height="600">
+                <img src="./artwork2.jpg" alt="Artwork 2" width="500" height="600">
+                <img src="./artwork3.jpg" alt="Artwork 3" width="500" height="600">
+                <img src="./artwork4.jpg" alr="Artwork 4" width="500" height="600">
+                <img src="./artwork5.jpg" alt="Artwork 5" width="500" height="600">
             </div>
         </section>
     </main>
-
-    <div id="modal" class="modal" onclick="closeModal()">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modal-img">
-        <div id="caption"></div>
-    </div>
-
-    <script>
-        function openModal(img) {
-            const modal = document.getElementById("modal");
-            const modalImg = document.getElementById("modal-img");
-            const captionText = document.getElementById("caption");
-            modal.style.display = "block";
-            modalImg.src = img.src;
-            captionText.innerHTML = img.alt;
-        }
-
-        function closeModal() {
-            const modal = document.getElementById("modal");
-            modal.style.display = "none";
-        }
-
-        const toggleButton = document.getElementById("toggle-mode");
-        toggleButton.addEventListener("click", () => {
-            document.body.classList.toggle("dark-mode");
-            toggleButton.textContent = document.body.classList.contains("dark-mode") ? "Switch to Light Mode" : "Switch to Dark Mode";
-        });
-    </script>
 </body>
 </html>
